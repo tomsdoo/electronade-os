@@ -10,11 +10,11 @@ const Events = {
 exports.handles = [
   {
     eventName: Events.HOMEDIR,
-    handler: (event) => homedir()
+    handler: (event: any) => homedir()
   },
   {
     eventName: Events.TMPDIR,
-    handler: (event) => tmpdir()
+    handler: (event: any) => tmpdir()
   }
 ];
 
