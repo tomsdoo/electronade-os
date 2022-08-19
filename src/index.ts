@@ -1,9 +1,2 @@
-import { handle as homedirHandle } from "./homedir";
-import { handle as tmpdirHandle } from "./tmpdir";
-
+export { handles } from "./handles";
 export { preloadObject } from "./preload";
-
-export const handles = [
-  homedirHandle,
-  tmpdirHandle
-];
