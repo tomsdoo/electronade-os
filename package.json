@@ -12,10 +12,8 @@
   "keywords": [],
   "author": "tom",
   "license": "MIT",
-  "peerDependencies": {
-    "electron": "^20.0.2"
-  },
   "devDependencies": {
+    "electron": "^20.0.3",
     "typescript": "^4.7.4"
   }
 }
