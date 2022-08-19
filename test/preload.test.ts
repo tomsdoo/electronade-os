@@ -36,6 +36,27 @@ describe("preloadObject", () => {
     mocked.restore();
   });
 
+  it("preloadObject.os.platform exists", () => {
+    assert(preloadObject.os.platform);
+  });
+
+  it("preloadObject.os.platform calling", async () => {
+    const mocked = mock(ipcRenderer);
+    const mockedValue = "mocked platform";
+    mocked
+      .expects("invoke")
+      .once()
+      .withArgs("electronade-os:platform")
+      .returns(Promise.resolve(mockedValue));
+
+    assert.equal(
+      mockedValue,
+      await eval(preloadObject.os.platform.toString())()
+    );
+    mocked.verify();
+    mocked.restore();
+  });
+
   it("preloadObject.os.tmpdir existss", () => {
     assert(preloadObject.os.tmpdir);
   });
