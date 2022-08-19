@@ -1,26 +1,9 @@
-const { ipcRenderer } = require("electron");
-const { homedir, tmpdir } = require("os");
+import { handle as homedirHandle } from "./homedir";
+import { handle as tmpdirHandle } from "./tmpdir";
 
-const packageName = "electronade-os";
-const Events = {
-  HOMEDIR: `${packageName}:homedir`,
-  TMPDIR: `${packageName}:tmpdir`
-};
+export { preloadObject } from "./preload";
 
-exports.handles = [
-  {
-    eventName: Events.HOMEDIR,
-    handler: (event: any) => homedir()
-  },
-  {
-    eventName: Events.TMPDIR,
-    handler: (event: any) => tmpdir()
-  }
+export const handles = [
+  homedirHandle,
+  tmpdirHandle
 ];
-
-exports.preloadObject = {
-  os: {
-    homedir: () => ipcRenderer.invoke("electronade-os:homedir"),
-    tmpdir: () => ipcRenderer.invoke("electronade-os:tmpdir")
-  }
-};
