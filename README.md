@@ -7,6 +7,17 @@ It's a package for electronade that provides some feature of Node.js os class.
 npm install electronade-os
 ```
 
+# What Exposed
+``` typescript
+electronade: {
+  os: {
+    homedir: () => Promise<string>;
+    platform: () => Promise<string>;
+    tmpdir: () => Promise<string>;
+  }
+}
+```
+
 # Usage
 See electronade usage for details.
 
