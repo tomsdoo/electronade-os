@@ -7,8 +7,8 @@
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
-    "fix-staged:src": "npm run lintfix:src && npm run format:src",
-    "fix-staged:test": "npm run lintfix:test && npm run format:test",
+    "fix-staged:src": "npm run lint:src && npm run format:src",
+    "fix-staged:test": "npm run lint:test && npm run format:test",
     "format": "npm run format:src && npm run format:test",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
