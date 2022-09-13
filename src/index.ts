@@ -5,6 +5,6 @@ export const preloadObject = {
   os: {
     homedir: () => ipcRenderer.invoke("electronade-os:homedir"),
     platform: () => ipcRenderer.invoke("electronade-os:platform"),
-    tmpdir: () => ipcRenderer.invoke("electronade-os:tmpdir")
-  }
+    tmpdir: () => ipcRenderer.invoke("electronade-os:tmpdir"),
+  },
 };

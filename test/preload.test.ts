@@ -7,7 +7,7 @@ import { mock } from "sinon";
 const ipcRenderer: {
   invoke: (eventName: string, ...args: any[]) => Promise<any>;
 } = {
-  invoke: () => Promise.resolve(undefined)
+  invoke: () => Promise.resolve(undefined),
 };
 
 describe("preloadObject", () => {
@@ -70,10 +70,7 @@ describe("preloadObject", () => {
       .withArgs("electronade-os:tmpdir")
       .returns(Promise.resolve(mockedValue));
 
-    assert.equal(
-      mockedValue,
-      await eval(preloadObject.os.tmpdir.toString())()
-    );
+    assert.equal(mockedValue, await eval(preloadObject.os.tmpdir.toString())());
     mocked.verify();
     mocked.restore();
   });
