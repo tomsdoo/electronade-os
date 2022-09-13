@@ -7,6 +7,8 @@
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
+    "fix-staged:src": "npm run lintfix:src && npm run format:src",
+    "fix-staged:test": "npm run lintfix:test && npm run format:test",
     "format": "npm run format:src && npm run format:test",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
@@ -16,6 +18,10 @@
     "prepare": "husky install",
     "empty-message": "echo testing empty message",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/**/*.ts\" --timeout 30000"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "npm run fix-staged:src",
+    "test/**/*.ts": "npm run fix-staged:test"
   },
   "keywords": [],
   "author": "tom",
@@ -32,6 +38,7 @@
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
     "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "mocha": "^10.0.0",
     "prettier": "^2.7.1",
     "sinon": "^14.0.0",
