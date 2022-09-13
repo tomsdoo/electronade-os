@@ -7,7 +7,7 @@ import { mock } from "sinon";
 const ipcRenderer: {
   invoke: (eventName: string, ...args: any[]) => Promise<any>;
 } = {
-  invoke: () => Promise.resolve(undefined),
+  invoke: async () => await Promise.resolve(undefined),
 };
 
 describe("preloadObject", () => {
@@ -30,6 +30,7 @@ describe("preloadObject", () => {
 
     assert.equal(
       mockedValue,
+      // eslint-disable-next-line no-eval
       await eval(preloadObject.os.homedir.toString())()
     );
     mocked.verify();
@@ -51,6 +52,7 @@ describe("preloadObject", () => {
 
     assert.equal(
       mockedValue,
+      // eslint-disable-next-line no-eval
       await eval(preloadObject.os.platform.toString())()
     );
     mocked.verify();
@@ -70,6 +72,7 @@ describe("preloadObject", () => {
       .withArgs("electronade-os:tmpdir")
       .returns(Promise.resolve(mockedValue));
 
+    // eslint-disable-next-line no-eval
     assert.equal(mockedValue, await eval(preloadObject.os.tmpdir.toString())());
     mocked.verify();
     mocked.restore();
