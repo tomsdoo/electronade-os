@@ -5,18 +5,10 @@
     <script>
       MdBook.start({
         mdFiles: {
-          indexedPaths: [
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/about.md",
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/getting_started.md",
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/customize_styles.md",
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/make_theme.md",
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/css_variables.md",
-          ],
-          hiddenPaths: [
-            "https://raw.githubusercontent.com/tomsdoo/md-book/main/public/md/test_content.md",
-          ],
+          indexedPaths: ["/md/about.md"],
+          hiddenPaths: [],
         },
-        header: { title: "md book" },
+        header: { title: "electronade-os" },
         footer: {
           text: "powered by ",
           link: {
@@ -26,6 +18,10 @@
         },
       });
     </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tomsd/md-book/public/css/dark.css"
+    />
   </head>
   <body></body>
 </html>
