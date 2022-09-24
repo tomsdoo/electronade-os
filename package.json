@@ -20,7 +20,6 @@
     "lintfix:src": "eslint --fix src/**/*.ts",
     "lintfix:test": "eslint --fix test/**/*.ts",
     "prepare": "husky install",
-    "empty-message": "echo testing empty message",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/**/*.ts\" --timeout 30000"
   },
   "lint-staged": {
