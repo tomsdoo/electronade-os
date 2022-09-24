@@ -10,6 +10,7 @@
     "fix-staged:src": "npm run lint:src && npm run format:src",
     "fix-staged:test": "npm run lint:test && npm run format:test",
     "format": "npm run format:src && npm run format:test",
+    "format:document": "prettier --write docs/**/*.html",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
     "lint": "npm run lint:src && npm run lint:test",
@@ -19,10 +20,11 @@
     "lintfix:src": "eslint --fix src/**/*.ts",
     "lintfix:test": "eslint --fix test/**/*.ts",
     "prepare": "husky install",
-    "empty-message": "echo testing empty message",
+    "serve:doc": "mdbook --serve --directory docs",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/**/*.ts\" --timeout 30000"
   },
   "lint-staged": {
+    "docs/**/*.html": "npm run format:document",
     "src/**/*.ts": "npm run fix-staged:src",
     "test/**/*.ts": "npm run fix-staged:test"
   },
@@ -30,6 +32,7 @@
   "author": "tom",
   "license": "MIT",
   "devDependencies": {
+    "@tomsd/md-book": "^0.16.0",
     "@types/mocha": "^9.1.1",
     "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
