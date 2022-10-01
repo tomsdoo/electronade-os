@@ -1,6 +1,7 @@
 # electronade-os
 
-It's a package for electronade that provides some feature of Node.js os class.
+It's a package for electronade that provides some feature of Node.js os class.  
+See [electronade-os.netlify.app](https://electronade-os.netlify.app/) also.
 
 # Installation
 ``` shell
