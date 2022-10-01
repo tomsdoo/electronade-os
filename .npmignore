@@ -1,5 +1,6 @@
 .github/
 .husky/
+docs/
 node_modules/
 src/
 test/
