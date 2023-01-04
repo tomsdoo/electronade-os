@@ -1,6 +1,6 @@
 {
   "name": "electronade-os",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "It provides the feature about os for electronade.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
